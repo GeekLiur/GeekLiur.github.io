@@ -16,7 +16,7 @@
     </style>
 <body>
 
-
+    <div id="status"></div>
 
 <script type="text/javascript">
     window._AMapSecurityConfig = {
@@ -48,12 +48,12 @@
     });
     //解析定位结果
     function onComplete(data) {
-        document.write(JSON.stringify(data.formattedAddress));
+          document.getElementById('status').innerHTML=JSON.stringify(data.formattedAddress);
     }
     //解析定位错误信息
     function onError(data) {
         document.getElementById('status').innerHTML='定位失败'
-        document.getElementById('result').innerHTML = '失败原因排查信息:'+data.message;
+        document.getElementById('status').innerHTML = '失败原因排查信息:'+data.message;
     }
 </script>
 </body>
