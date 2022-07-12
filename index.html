@@ -10,6 +10,8 @@
 
 <body>
 <script>
+    var lola;
+
     if(navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
             //locationSuccess 获取成功的话
@@ -17,8 +19,10 @@
                 let getLongitude = position.coords.longitude;
                 let getLatitude = position.coords.latitude;
                 console.log(1);
-               alert(getLongitude)　　　　　 //弹出经度测试
-               alert(getLatitude)
+                //alert(getLongitude)　　　　　 //弹出经度测试
+                //alert(getLatitude)
+                lola = getLongitude+","+getLatitude;
+                alert(lola);
             },
             //locationError  获取失败的话
             function(error) {
@@ -27,7 +31,7 @@
             }
         );
     }
-    // 1213
+
 
 </script>
 </body>
